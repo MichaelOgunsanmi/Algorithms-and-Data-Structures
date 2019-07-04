@@ -20,7 +20,7 @@ def bstvalidator(root, min = -sys.maxsize - 1, max = sys.maxsize):
 
 root = node(5)
 l = node(4)
-r = node(6)
+r = node(9)
 
 root.left_child = l
 root.right_child = r
