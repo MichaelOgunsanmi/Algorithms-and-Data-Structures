@@ -28,4 +28,4 @@ def bottomUpFibonacci(index):
 
     return answer.pop()
 
-print('bottom up', bottomUpFibonacci(10000))
+print('bottom up', bottomUpFibonacci(100))

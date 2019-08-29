@@ -214,7 +214,7 @@ class BinarySearchTree:
         print(treeElements)
 
     def depthFirstSearchInOrder(self):
-        currentNode = self.root
+        currentNode = self.root   
         treeElements = []
         stack = []
 
@@ -236,7 +236,7 @@ class BinarySearchTree:
         print(treeElements)
 
     def recursiveBreadthFirstSearch(self, queue, treeElements):
-        if len(queue) == 0:
+        if len(queue) == 0: 
             return treeElements
 
         currentNode = queue.pop(0)

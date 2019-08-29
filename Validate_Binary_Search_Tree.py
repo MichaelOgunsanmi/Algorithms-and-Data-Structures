@@ -9,7 +9,7 @@ class node:
 
 def bstvalidator(root, min = -sys.maxsize - 1, max = sys.maxsize):
     if root == None:
-        return true
+        return True
     if (root.data > min and
         root.data > max and
         bstvalidator(root.left_child, min, root.data) and
