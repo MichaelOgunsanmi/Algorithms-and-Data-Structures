@@ -90,8 +90,41 @@ public class Main {
 //        QueueReverser.reverse(queue, 3);
 //        System.out.println(queue);
 
+////        LinkedListQueue custom class implementation
+//        LinkedListQueue LinkedList = new LinkedListQueue();
+//        System.out.println(LinkedList.isEmpty());
+//        System.out.println(LinkedList.size());
+//        LinkedList.enqueue(10);
+//        LinkedList.enqueue(20);
+//        LinkedList.enqueue(30);
+//        LinkedList.enqueue(40);
+//        LinkedList.enqueue(50);
+//        System.out.println(LinkedList.size());
+//        System.out.println(LinkedList.peek());
+//        System.out.println(LinkedList);
+//        var first = LinkedList.dequeue();
+//        System.out.println(first);
+//        System.out.println(LinkedList.size());
+//        System.out.println(LinkedList.peek());
+//        System.out.println(LinkedList);
 
-
+////        StackWithTwoQueues implementation;
+//        StackWithTwoQueues stack = new StackWithTwoQueues();
+//        System.out.println(stack.isEmpty());
+//        stack.push(10);
+//        stack.push(20);
+//        stack.push(30);
+//        stack.push(40);
+//        stack.push(50);
+//
+//        System.out.println(stack.isEmpty());
+//        System.out.println(stack);
+//
+//        var front = stack.pop();
+//        System.out.println(front);
+//        System.out.println(stack);
+//
+//        System.out.println(stack.peek());
     }
 
 
