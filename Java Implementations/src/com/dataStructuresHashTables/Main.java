@@ -35,5 +35,18 @@ public class Main {
 //            set.add(number);
 //        System.out.println(set);
 
+////        Using custom built hashTable;
+//        HashTable hashTable = new HashTable();
+//        hashTable.put(6, "A");
+//        hashTable.put(8, "B");
+//        hashTable.put(11, "C");
+//        System.out.println("Get");   //Use Debugger to see how result changes;
+//        hashTable.put(6, "A+");
+//        System.out.println("Put");
+//        System.out.println(hashTable.get(6));
+//        hashTable.remove(6);
+//        System.out.println("Remove");
+//        System.out.println(hashTable.get(10));
+
     }
 }
