@@ -1,10 +1,13 @@
 package com.dataStructuresHashTables;
+import org.jetbrains.annotations.Contract;
+
 import java.util.LinkedList;
 public class HashTable {
     private class Entry{
         private int key;
         private String value;
 
+        @Contract(pure = true)
         public Entry(int key, String value) {
             this.key = key;
             this.value = value;
