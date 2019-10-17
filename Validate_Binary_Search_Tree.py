@@ -11,9 +11,9 @@ def bstvalidator(root, min = -sys.maxsize - 1, max = sys.maxsize):
     if root == None:
         return True
     if (root.data > min and
-        root.data > max and
+        root.data < max and
         bstvalidator(root.left_child, min, root.data) and
-        bstvalidator(rot.right_child, root.data, max)):
+        bstvalidator(root.right_child, root.data, max)):
         return True
     else:
         return False
