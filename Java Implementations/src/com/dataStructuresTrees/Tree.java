@@ -205,4 +205,143 @@ public class Tree {
                 isBinarySearchTree ( currentNode.rightChild, currentNode.value + 1, maxValue ); //root, left, right (preOrder Traversal)
     }
 
+    public ArrayList<Integer> getNodesAtDistance( int distance ){
+        ArrayList<Integer> levelElements = new ArrayList<> ();
+        getNodesAtDistance (rootNode, distance, levelElements);
+        return levelElements;
+    }
+
+    private void getNodesAtDistance ( Node currentNode, int distance, ArrayList<Integer> levelElements ) {
+        if (currentNode == null)
+            return;
+
+        if (distance == 0) {
+            levelElements.add ( currentNode.value );
+            return;
+        }
+
+        getNodesAtDistance ( currentNode.leftChild, distance - 1, levelElements );
+        getNodesAtDistance ( currentNode.rightChild, distance - 1, levelElements );
+    }
+
+    public ArrayList<Integer> breadthFirstSearch(){
+        ArrayList<Integer> treeElements = new ArrayList<> ();
+
+        for (int i = 0; i <= height () ; i++) {
+            treeElements.addAll ( getNodesAtDistance ( i ) );
+        }
+
+        return treeElements;
+    }
+
+    public int size(){
+        return size(rootNode);
+    }
+
+    private int size ( Node currentNode ) {
+        if (currentNode == null)
+            return 0;
+
+        if (isLeaf ( currentNode ))
+            return 1;
+
+        return 1 + size (currentNode.leftChild) + size (currentNode.rightChild);
+    }
+
+    public int countLeaves(){
+        return countLeaves (rootNode);
+    }
+
+    private int countLeaves ( Node currentNode ) {
+        if (currentNode == null)
+            return 0;
+
+        if (isLeaf ( currentNode ))
+            return 1;
+
+        return countLeaves (currentNode.leftChild) + countLeaves (currentNode.rightChild);
+    }
+
+    public int maxBST(){
+        if (rootNode == null)
+            throw new IllegalStateException();
+
+        var currentNode = rootNode;
+
+        while (currentNode.rightChild != null)
+            currentNode = currentNode.rightChild;
+
+        return currentNode.value;
+
+    }
+
+    public int max(){
+        return max(rootNode);
+    }
+
+    private int max ( Node currentNode ) {
+        if (rootNode == null)
+            throw new IllegalStateException ();
+
+        if (currentNode.rightChild == null)
+            return currentNode.value;
+
+        return max (currentNode.rightChild);
+    }
+
+    public boolean contains(int value){
+        return contains ( rootNode, value );
+    }
+
+    private boolean contains ( Node currentNode, int value ) {
+        if (currentNode == null)
+            return false;
+
+        if (currentNode.value == value)
+            return true;
+
+        return contains ( currentNode.leftChild, value ) || contains ( currentNode.rightChild, value );
+    }
+
+    public boolean areSiblings(int firstSibling, int secondSibling){
+        return areSiblings (rootNode, firstSibling, secondSibling);
+    }
+
+    private boolean areSiblings ( Node currentNode, int firstSibling, int secondSibling ) {
+        if (currentNode == null)
+            return false;
+
+        var areSiblings = false;
+
+        if (currentNode.leftChild != null && currentNode.rightChild != null)
+            areSiblings =  ((currentNode.leftChild.value == firstSibling) && (currentNode.rightChild.value == secondSibling))||
+                    ((currentNode.rightChild.value == firstSibling) && (currentNode.leftChild.value == secondSibling));
+
+        return areSiblings || areSiblings ( currentNode.leftChild, firstSibling, secondSibling ) ||
+                areSiblings ( currentNode.rightChild, firstSibling, secondSibling );
+    }
+
+    public ArrayList<Integer> getAncestors(int value){
+        ArrayList<Integer> ancestors = new ArrayList<> ();
+        getAncestors ( rootNode, value, ancestors );
+        return ancestors;
+    }
+
+    private boolean getAncestors ( Node currentNode, int value, ArrayList<Integer> ancestors ) {
+        if (currentNode == null)
+            return false;
+
+        if (currentNode.value == value)
+            return true;
+
+        if (getAncestors ( currentNode.leftChild, value, ancestors )
+                || getAncestors ( currentNode.rightChild, value, ancestors)){
+            ancestors.add ( currentNode.value );
+            return true;
+        }
+
+        return false;
+    }
+
+
 }
