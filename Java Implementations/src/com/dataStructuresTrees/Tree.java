@@ -343,5 +343,24 @@ public class Tree {
         return false;
     }
 
+    public boolean isBalanced(){
+        return isBalanced (rootNode);
+    }
+
+    private boolean isBalanced ( Node currentNode ) {
+        if (currentNode == null)
+            return true;
+
+        var balanceFactor = height (currentNode.leftChild) - height (currentNode.rightChild);
+
+        return Math.abs ( balanceFactor ) <= 1
+                && isBalanced (currentNode.leftChild)
+                && isBalanced (currentNode.rightChild);
+    }
+
+    public boolean isPerfect() {
+        return size () == (Math.pow ( 2, height () + 1 ) - 1);
+    }
+
 
 }

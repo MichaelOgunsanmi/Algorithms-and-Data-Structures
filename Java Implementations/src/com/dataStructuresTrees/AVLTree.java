@@ -35,24 +35,52 @@ public class AVLTree {
         else
             currentNode.rightChild = insert ( currentNode.rightChild, value );
 
-        currentNode.height = Math.max ( height ( currentNode.leftChild ), height ( currentNode.rightChild ) ) + 1;
+        setHeight ( currentNode );
 
-        balance(currentNode);
+        return balance(currentNode);
+    }
+
+    private AVLNode balance ( AVLNode currentNode ) {
+        if (isLeftHeavy ( currentNode )){
+            if (balanceFactor ( currentNode.leftChild ) < 0)
+                currentNode.leftChild = rotateLeft ( currentNode.leftChild );
+            return rotateRight ( currentNode );
+            }
+        else if (isRightHeavy ( currentNode )){
+            if (balanceFactor ( currentNode.rightChild ) > 0)
+                currentNode.rightChild = rotateRight ( currentNode.rightChild );
+            return rotateLeft ( currentNode );
+        }
 
         return currentNode;
     }
 
-    private void balance ( AVLNode currentNode ) {
-        if (isLeftHeavy ( currentNode )){
-            if (balanceFactor ( currentNode.leftChild ) < 0)
-                System.out.println ( "Perform left rotation on " + currentNode.leftChild  );
-            System.out.println ( "Perform right rotation as " + currentNode.value + " is left heavy" );
-            }
-        else if (isRightHeavy ( currentNode )){
-            if (balanceFactor ( currentNode.rightChild ) > 0)
-                System.out.println ("Perform right rotation on " + currentNode.rightChild );
-            System.out.println ( "Perform left rotation as " + currentNode.value + " is right heavy" );
-        }
+    private AVLNode rotateLeft(AVLNode currentNode){
+        var newRoot = currentNode.rightChild;
+
+        currentNode.rightChild = newRoot.leftChild;
+        newRoot.leftChild = currentNode;
+
+        setHeight(currentNode);
+        setHeight(newRoot);
+
+        return newRoot;
+    }
+
+    private AVLNode rotateRight(AVLNode currentNode){
+        var newRoot = currentNode.leftChild;
+
+        currentNode.leftChild = newRoot.rightChild;
+        newRoot.rightChild = currentNode;
+
+        setHeight ( currentNode );
+        setHeight ( newRoot );
+
+        return newRoot;
+    }
+
+    private void setHeight ( AVLNode currentNode ) {
+        currentNode.height = Math.max ( height ( currentNode.leftChild ), height ( currentNode.rightChild ) ) + 1;
     }
 
     private int height(AVLNode currentNode){
