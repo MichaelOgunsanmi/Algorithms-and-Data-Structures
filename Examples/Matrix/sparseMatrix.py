@@ -93,13 +93,21 @@ def transformToNormalMatrix(sparseMatrix):
     output = [[0] * columns for i in range(rows)]
 
     for i in range(1, sparseMatrix[0][2] + 1):
-        print(sparseMatrix[i])
+        output[sparseMatrix[i][0] - 1][sparseMatrix[i][1] - 1] = sparseMatrix[i][2]
+
+    return output
+
+# print(transformToNormalMatrix (addTwoSparseMatrices([
+# [2,0,0,0,0], 
+# [2,5,0,0,0], 
+# [2,0,0,0,0], 
+# [2,0,0,0,6]
+# ], [
+# [1,1,1,1,1], 
+# [0,2,0,0,0], 
+# [0,0,0,0,0], 
+# [0,0,0,0,0]
+# ])))
 
 
-transformToNormalMatrix(transformToSparseMatrix([
-[1,0,0,0,0], 
-[0,9,0,1,0], 
-[0,0,0,0,0], 
-[0,0,0,6,0]
-]))
 

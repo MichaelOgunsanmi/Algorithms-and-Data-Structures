@@ -124,6 +124,22 @@ class SinglyLinkedlist:
         
         self.printList()
 
+    def reverseRecursive(self):
+        listElements = []
+        self.reverseLinkedListRecursive(self.head, self.head.next, listElements)
+        print(listElements)
+
+    def reverseLinkedListRecursive(self, currentNode, nextNode, listElements):
+        if nextNode != None:
+            self.reverseLinkedListRecursive(nextNode, nextNode.next, listElements)       
+            nextNode.next = currentNode 
+        else:
+            
+            self.head = currentNode
+        
+        listElements.append(currentNode.value)
+        
+
     def printList(self):
         linkedList = []
         currentNode = self.head
@@ -131,6 +147,20 @@ class SinglyLinkedlist:
             linkedList.append(currentNode.value)
             currentNode = currentNode.next
         print(linkedList)
+
+    
+    def printListReversedRecursive(self):
+        listElements = []
+        self.printListReversed(self.head, listElements)
+        print(listElements)
+
+    def printListReversed(self, currentNode, listElements):
+        if currentNode == None:
+            return
+        
+        self.printListReversed(currentNode.next, listElements)
+        listElements.append(currentNode.value)
+
     
     def __traverseToIndex__(self, index):
         currentIndex = 0
@@ -152,12 +182,28 @@ class SinglyLinkedlist:
             currentValue = currentNode.value
         return  currentIndex
 
+    def minValueRecursive(self):
+        minValue = float('inf')
+        minValue = self.minValue(self.head, minValue)
+        print(minValue)
+        
+
+    def minValue(self, currentNode, minValue):
+        if currentNode == None:
+            return minValue
+        
+        if currentNode.value < minValue:
+            minValue = currentNode.value
+
+        return self.minValue(currentNode.next, minValue)
+
+
 
 driver = SinglyLinkedlist()
-driver.append('good')
-driver.append('bad')
-driver.append('great')
-driver.append('ugly')
+# driver.append('good')
+# driver.append('bad')
+# driver.append('great')
+# driver.append('ugly')
 # driver.prepend('starter')
 # driver.prepend('another')
 # driver.insert('game', 0)
@@ -178,9 +224,23 @@ driver.append('ugly')
 # driver.remove('starter')
 # driver.remove('')
 # driver.remove('')
-driver.printList()
+# driver.printList()
 # print(driver.length)
 # print(driver.len())
 # print(driver.length)
-driver.reverse()
+# driver.printListReversedRecursive()
+# driver.reverse()
+
+# driver.append(2)
+# driver.append(4)
+# driver.append(3)
+# driver.append(8)
+# driver.append(1)
+# driver.append(9)
+# driver.printList()
+# driver.reverseRecursive()
+# driver.minValueRecursive()
+
+
+
 
