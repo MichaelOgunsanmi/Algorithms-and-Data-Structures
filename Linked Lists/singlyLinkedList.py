@@ -80,7 +80,9 @@ class SinglyLinkedlist:
             print('Invalid index passed. Pass in a number')
             return
         elif index == 0:
+            temp = self.head
             self.head = self.head.next
+            temp.next = None
             self.length -= 1
             return
         elif index < 0 or index >= self.length:
@@ -140,7 +142,7 @@ class SinglyLinkedlist:
         listElements.append(currentNode.value)
         
 
-    def printList(self):
+    def printList(self):        
         linkedList = []
         currentNode = self.head
         while currentNode != None:
@@ -200,10 +202,10 @@ class SinglyLinkedlist:
 
 
 driver = SinglyLinkedlist()
-# driver.append('good')
-# driver.append('bad')
-# driver.append('great')
-# driver.append('ugly')
+driver.append('good')
+driver.append('bad')
+driver.append('great')
+driver.append('ugly')
 # driver.prepend('starter')
 # driver.prepend('another')
 # driver.insert('game', 0)
