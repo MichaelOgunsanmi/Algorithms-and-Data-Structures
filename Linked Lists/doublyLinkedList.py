@@ -101,10 +101,13 @@ class DoublyLinkedList:
             return
         if index == 0:
             newHead = self.head.next
-
-            newHead.prev = None
-            self.head.next = None
-
+            
+            if newHead != None:
+                newHead.prev = None
+                self.head.next = None
+            else:
+                self.tail = None
+            
             self.head = newHead
             self.length -= 1
             return
@@ -194,16 +197,28 @@ class DoublyLinkedList:
 
 
 driver = DoublyLinkedList()
-driver.append(3)
-driver.append(4)
-driver.prepend(5)
-driver.prepend(7)
-driver.insert(99,2)
-driver.insert(2,2)
-# driver.reverse()
+# driver.append(3)
+# driver.append(4)
+# driver.prepend(5)
+# driver.prepend(7)
+# driver.insert(99,2)
+# driver.insert(2,2)
 # driver.printList()
+# driver.reverse()
 # driver.removeValue(2)
-driver.printList()
+# driver.printList() 
 # print(driver.length)
 # print(driver.len())
-driver.reverse()
+# driver.reverse()
+
+# driver.append(1)
+# driver.printList()
+# driver.deleteAtIndex(0)
+# driver.printList()
+
+driver.append(1)
+driver.append(2)
+driver.append(3)
+driver.printList()
+driver.deleteAtIndex(2)
+driver.printList()

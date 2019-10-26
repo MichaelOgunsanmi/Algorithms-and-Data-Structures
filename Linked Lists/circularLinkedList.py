@@ -2,7 +2,7 @@ from singlyLinkedList import *
 
 class CircularLinkedList():
     def __init__(self):
-        self.linkedList = SinglyLinkedlist()
+        self.linkedList = SinglyLinkedList()
         
 
     def append(self, value):
@@ -36,17 +36,33 @@ class CircularLinkedList():
 
         leader.next = newNode
         newNode.next = restOfList
+        self.linkedList.length += 1
 
 
     def deleteAtIndex(self, index):
         if index < 0 or index > self.linkedList.length:
             print("Invalid index")
+            return
         elif index == 0:          
             temp = self.linkedList.head
             self.linkedList.head = self.linkedList.head.next
             self.linkedList.tail.next = self.linkedList.head
+            self.linkedList.length -= 1
             temp.next = None
             return
+
+        leader = self.__traverseToIndex__(index - 1)
+        unwantedNode = leader.next
+        
+        leader.next = unwantedNode.next
+
+        unwantedNode.next = None
+
+        if index == self.linkedList.length - 1:
+            self.linkedList.tail = leader
+
+        self.linkedList.length -= 1
+        
     
     def __traverseToIndex__(self, index):
         currentNode = self.linkedList.head
@@ -103,7 +119,7 @@ ab.prepend(11)
 ab.prepend(10)
 ab.insert(14.5, 5)
 ab.printList()
-ab.deleteAtIndex(0)
+ab.deleteAtIndex(9)
 ab.printList()
 ab.printListRecursive()
 

@@ -14,7 +14,7 @@ def linkedListHasLoop(linkedList):
 
 
 def createLinkedListWithLoop():
-    linkedList = SinglyLinkedlist()
+    linkedList = SinglyLinkedList()
 
     linkedList.append(1)
     linkedList.append(2)

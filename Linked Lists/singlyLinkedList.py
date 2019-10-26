@@ -4,7 +4,7 @@ class Node:
         self.next = None
 
 
-class SinglyLinkedlist:
+class SinglyLinkedList:
     def __init__(self):
         self.head = None
         self.tail = None
@@ -116,6 +116,7 @@ class SinglyLinkedlist:
         self.tail = self.head
         currentNode = self.head.next
         alreadyReversed.next = None
+
         while currentNode != None:
             storePointer = currentNode.next
             currentNode.next = alreadyReversed
@@ -201,7 +202,7 @@ class SinglyLinkedlist:
 
 
 
-driver = SinglyLinkedlist()
+driver = SinglyLinkedList()
 driver.append('good')
 driver.append('bad')
 driver.append('great')
@@ -211,7 +212,7 @@ driver.append('ugly')
 # driver.insert('game', 0)
 # driver.insert('money', -1)
 # driver.insert('last', 8)
-# driver.printList()
+driver.printList()
 # driver.removeValue('another')
 # driver.deleteAtIndex(-1)
 # driver.deleteAtIndex(0)
@@ -231,7 +232,7 @@ driver.append('ugly')
 # print(driver.len())
 # print(driver.length)
 # driver.printListReversedRecursive()
-# driver.reverse()
+driver.reverse()
 
 # driver.append(2)
 # driver.append(4)
@@ -242,7 +243,6 @@ driver.append('ugly')
 # driver.printList()
 # driver.reverseRecursive()
 # driver.minValueRecursive()
-
 
 
 

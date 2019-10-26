@@ -5,11 +5,11 @@
 #         self.data = data
 #         self.next = None
 #
-# class SinglyLinkedlist:
+# class SinglyLinkedList:
 #     def __init__(self):
 #         self.head = None
 #
-#     def display(self):                              #display elements in the SinglyLinkedlist
+#     def display(self):                              #display elements in the SinglyLinkedList
 #         if self.head is None:
 #             print('List is Empty')
 #             return
@@ -19,7 +19,7 @@
 #             current_node = current_node.next
 #         print(current_node.data)
 #
-#     def length(self):                           #find length of SinglyLinkedlist
+#     def length(self):                           #find length of SinglyLinkedList
 #         current_node = self.head
 #         total = 0
 #         while current_node != None:
@@ -135,7 +135,7 @@ print(5//2)
 #
 #
 # # firstnode = node(56)
-# # singlyLinkedlist = SinglyLinkedlist()
+# # singlyLinkedlist = SinglyLinkedList()
 # # singlyLinkedlist.Einsert(firstnode)
 # # secondnode = node('ogunsanmi')
 # # singlyLinkedlist.Einsert(secondnode)

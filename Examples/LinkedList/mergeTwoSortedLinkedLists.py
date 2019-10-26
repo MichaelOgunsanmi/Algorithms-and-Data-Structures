@@ -38,8 +38,8 @@ def mergeTwoSortedLinkedLists(firstList, secondList):
 
 
 
-firstList = SinglyLinkedlist()
-secondList = SinglyLinkedlist()
+firstList = SinglyLinkedList()
+secondList = SinglyLinkedList()
 firstList.append(2)
 firstList.append(4)
 firstList.append(8)

@@ -1,8 +1,8 @@
-from Singly_Linked_List_Class import node, SinglyLinkedlist
+from Singly_Linked_List_Class import node, SinglyLinkedList
 
-List1 = SinglyLinkedlist()
-List2 = SinglyLinkedlist()
-mergedlist = SinglyLinkedlist()
+List1 = SinglyLinkedList()
+List2 = SinglyLinkedList()
+mergedlist = SinglyLinkedList()
 
 node_one = node(2)
 node_two = node(6)
