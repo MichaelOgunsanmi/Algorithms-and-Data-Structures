@@ -1,4 +1,4 @@
-#Dijkstra Shortest path
+# Dijkstra Shortest path
 import sys
 import heapq
 
@@ -11,13 +11,14 @@ class vertex(object):
         self.adjacencieslist = []
         self.mindistance = sys.maxsize
 
-    def __cmp__(self, othervertex):  #overridding the comparator operation
+    def __cmp__(self, othervertex):  # overridding the comparator operation
         return self.cmp(self.mindistance, othervertex.mindistance)
 
-    def __lt__(self, othervertex):  #overriding the less than operation
-         selfpriority = self.mindistance
-         othervertexpriority = othervertex.mindistance
-         return selfpriority < othervertexpriority
+    def __lt__(self, othervertex):  # overriding the less than operation
+        selfpriority = self.mindistance
+        othervertexpriority = othervertex.mindistance
+        return selfpriority < othervertexpriority
+
 
 class edge:
     def __init__(self, weight, startvertex, targetvertex):
@@ -25,13 +26,14 @@ class edge:
         self.startvertex = startvertex
         self.targetvertex = targetvertex
 
+
 class Algorithm(vertex, edge):
     def calculateshortestpath(self, startvertex):
         queue = []
         startvertex.mindistance = 0
         heapq.heappush(queue, startvertex)
 
-        while len(queue) > 0:               #since priority queue, pop will return the element with smallest length
+        while len(queue) > 0:  # since priority queue, pop will return the element with smallest length
             actual_vertex = heapq.heappop(queue)
             for edge in actual_vertex.adjacencieslist:
                 initial = edge.startvertex
@@ -46,7 +48,7 @@ class Algorithm(vertex, edge):
     def getshortestpath(self, targetvertex):
         print('Shortest path to target is: ' + targetvertex.mindistance)
 
-        node = targetvertex     #backtracking to get the nodes that were visited to obtain this minimum value of distance
+        node = targetvertex  # backtracking to get the nodes that were visited to obtain this minimum value of distance
         while node is not None:
             print(node.name)
             node = node.predecessor

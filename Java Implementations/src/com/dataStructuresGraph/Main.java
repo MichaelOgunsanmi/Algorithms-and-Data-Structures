@@ -58,9 +58,5 @@ public class Main {
         System.out.println (graph.hasCycle () ); //true
 
 
-
-
-
-
     }
 }

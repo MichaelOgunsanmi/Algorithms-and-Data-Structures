@@ -19,7 +19,7 @@ class Stack:
             print('Stack is Empty')
             return
         self.length -= 1
-        self.stack.pop()
+        return self.stack.pop()
     
     def isEmpty(self):
         if self.length == 0:
@@ -30,21 +30,21 @@ class Stack:
         print(self.stack[::-1])
 
 
-driver = Stack()
-print(driver.isEmpty())
+# driver = Stack()
+# print(driver.isEmpty())
+# # driver.pop()
+# # driver.peek()
+# driver.push('bottom')
+# # driver.peek()
+# driver.push('4')
+# driver.peek()
+# driver.push('8')
+# driver.push('12')
+# driver.push('top')
+# driver.push('top2to be popped')
+# driver.push('top2to be removed')
+# driver.pop()
 # driver.pop()
 # driver.peek()
-driver.push('bottom')
-# driver.peek()
-driver.push('4')
-driver.peek()
-driver.push('8')
-driver.push('12')
-driver.push('top')
-driver.push('top2to be popped')
-driver.push('top2to be removed')
-driver.pop()
-driver.pop()
-driver.peek()
-driver.printList()
+# driver.printList()
 

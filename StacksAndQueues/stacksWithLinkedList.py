@@ -3,6 +3,7 @@ class Node:
         self.value = value
         self.next = None
 
+
 class Stack:
     def __init__(self):
         self.top = None
@@ -15,8 +16,8 @@ class Stack:
             return
         print(self.top.value)
         return
-    
-    def push(self, value):     
+
+    def push(self, value):
         newNode = Node(value)
 
         if self.length == 0:
@@ -24,7 +25,7 @@ class Stack:
             self.bottom = self.top
             self.length += 1
             return
-        
+
         self.length += 1
         newNode.next = self.top
         self.top = newNode
@@ -41,20 +42,21 @@ class Stack:
         self.length -= 1
 
         return poppedValue
-    
+
     def isEmpty(self):
         if self.top is None:
-            return True 
+            return True
         return False
-    
+
     def printList(self):
         currentNode = self.top
         stack = []
         while currentNode != None:
             stack.append(currentNode.value)
             currentNode = currentNode.next
-        
+
         print(stack)
+
 
 driver = Stack()
 driver.push('last element')
@@ -81,5 +83,3 @@ print(driver.bottom.value)
 print(driver.top)
 driver.printList()
 print(driver.length)
-
-        
