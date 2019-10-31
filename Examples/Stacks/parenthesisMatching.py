@@ -1,8 +1,8 @@
 import sys
 
-sys.path.append(r'C:\Users\MICHAEL OGUNSANMI\Desktop\AI & CS\Studying Source Codes'
-                r'\Software Intervierw PreparationCodes\Algorithms-and-Data-'
-                r'Structures')
+sys.path.append(r'C:\Users\MICHAEL OGUNSANMI\Desktop\AI & '
+                r'CS\Studying Source Codes\Software Intervierw '
+                r'Preparation Codes\Algorithms-and-Data-Structures')
 from StacksAndQueues.stacksWithArrays import Stack
 
 
