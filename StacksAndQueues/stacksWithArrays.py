@@ -8,7 +8,12 @@ class Stack:
             print('Stack is Empty')
             return
         print(self.stack[-1])
-        return 
+        return
+
+    def top(self):
+        if self.length == 0:
+            return None
+        return self.stack[-1]
     
     def push(self, value):
         self.length += 1
