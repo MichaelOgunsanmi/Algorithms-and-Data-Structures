@@ -5,7 +5,7 @@ def insertionSort(arrayInput):
         while j>= 0 and key < arrayInput[j]:
             arrayInput[j+1] = arrayInput[j]
             j -= 1      
-        arrayInput[j+1] = key 
+        arrayInput[j+1] = key
     
     return arrayInput
 
