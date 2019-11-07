@@ -48,5 +48,22 @@ public class Main {
 //        System.out.println("Remove");
 //        System.out.println(hashTable.get(10));
 
+//        Exercises;
+//        int [] mostFrequent = {1,1,2,2,3,3,3,3,4,4,2,2,2};
+//        var result = HashTableExercises.mostFrequent ( mostFrequent );
+//        System.out.println (result );
+
+//        int []  countWithDifference = {1,7,5,9,2,12,3};
+////        var result = HashTableExercises.countPairsWithDifference ( countWithDifference, 2 );
+////        System.out.println (result );
+
+        int [] twoSum = {2,7,11,15,-6};
+        var result = HashTableExercises.twoSum ( twoSum, 9 );
+        System.out.println (Arrays.toString ( result ) );
+
+
+//        int [] twoSum2 = {2,7,11,15};
+//        var result = HashTableExercises.twoSum2 ( twoSum2, 9 );
+//        System.out.println (Arrays.toString ( result ) );
     }
 }
