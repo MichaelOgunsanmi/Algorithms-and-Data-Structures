@@ -3,10 +3,11 @@ class Node:
         self.value = value
         self.priority = priority
 
+
 class priorityQueue:
     def __init__(self):
         self.values = []
-    
+
     def enqueue(self, value, priority):
         newNode = Node(value, priority)
         self.values.append(newNode)
@@ -17,7 +18,7 @@ class priorityQueue:
         lastValue = self.values.pop()
         if len(self.values) > 0:
             self.values[0] = lastValue
-            self.__sinkDown__() 
+            self.__sinkDown__()
         return minValue.value
 
     def __bubbleUp__(self):
@@ -25,7 +26,7 @@ class priorityQueue:
         element = self.values[elementIndex]
 
         while elementIndex > 0:
-            parentIndex = (elementIndex - 1) //2
+            parentIndex = (elementIndex - 1) // 2
             parent = self.values[parentIndex]
             if element.priority >= parent.priority: break
             self.values[parentIndex], self.values[elementIndex] = element, parent
@@ -48,14 +49,16 @@ class priorityQueue:
 
             if rightChildIndex < len(self.values):
                 rightChild = self.values[rightChildIndex]
-                if (swap == False and rightChild.priority < parent.priority) or (swap != False and rightChild.priority < leftChild.priority):
+                if (swap == False and rightChild.priority < parent.priority) or (
+                        swap != False and rightChild.priority < leftChild.priority):
                     swap = rightChildIndex
 
-            if swap == False: break 
+            if swap == False: break
 
             self.values[parentIndex], self.values[swap] = self.values[swap], self.values[parentIndex]
 
             parentIndex = swap
+
 
 class weightedGraph:
     def __init__(self):
@@ -68,9 +71,9 @@ class weightedGraph:
             self.numberOfNodes += 1
 
     def addEdge(self, node1, node2, weight):
-        self.adjacentList[node1].append({ 'node': node2, 'weight': weight})
+        self.adjacentList[node1].append({'node': node2, 'weight': weight})
 
-        self.adjacentList[node2].append({ 'node': node1, 'weight': weight})
+        self.adjacentList[node2].append({'node': node1, 'weight': weight})
 
     def dijkstra(self, start, end):
         pQueue = priorityQueue()
@@ -78,49 +81,39 @@ class weightedGraph:
         previous = {}
         output = []
 
-
-        #build up inital state of distances
+        # build up inital state of distances
         for node in self.adjacentList:
             if node == start:
                 distances[node] = 0
                 pQueue.enqueue(node, 0)
             else:
                 distances[node] = float('inf')
-                pQueue.enqueue(node, float('inf')) 
-            
+                pQueue.enqueue(node, float('inf'))
+
             previous[node] = None
 
-        #As long as priorityQueue still has values in it
+        # As long as priorityQueue still has values in it
         while len(pQueue.values) != 0:
             smallest = pQueue.dequeue()
             if smallest == end:
-                while previous[smallest] != None:
+                while previous[smallest] is not None:
                     output.append(smallest)
                     smallest = previous[smallest]
                 break
             if smallest or distances[smallest] != float('inf'):
                 for neighbor in self.adjacentList[smallest]:
-                    #Calculate new distances to neighbor node
+                    # Calculate new distances to neighbor node
                     candidate = distances[smallest] + neighbor['weight']
-                    nextNeighbor = neighbor['node'] 
+                    nextNeighbor = neighbor['node']
                     if candidate < distances[nextNeighbor]:
-                        #Updating new smallest distance to neighbor
+                        # Updating new smallest distance to neighbor
                         distances[nextNeighbor] = candidate
-                        #Updating previous - How we got to neighbor
+                        # Updating previous - How we got to neighbor
                         previous[nextNeighbor] = smallest
-                        #enqueue in priorityQueue with new priority (new sum)
+                        # enqueue in priorityQueue with new priority (new sum)
                         pQueue.enqueue(nextNeighbor, candidate)
         output.append(smallest)
-        return output[::-1], 'Shortest distance = {distance}'.format(distance = distances[end])
-            
-
-        
-        
-
-
-
-
-
+        return output[::-1], 'Shortest distance = {distance}'.format(distance=distances[end])
 
 
 driver = weightedGraph()

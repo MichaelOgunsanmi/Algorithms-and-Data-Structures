@@ -1,3 +1,6 @@
+from LinkedLists.singlyLinkedList import SinglyLinkedList
+
+
 def linkedListIntersection(firstList, secondList):
     currentNode = firstList.head
     firstStack = []

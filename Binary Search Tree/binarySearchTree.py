@@ -4,70 +4,71 @@ class Node:
         self.left = None
         self.right = None
 
+
 class BinarySearchTree:
     def __init__(self):
         self.root = None
-    
+
     def insert(self, value):
         newNode = Node(value)
-        
-        if self.root == None:
+
+        if self.root is None:
             self.root = newNode
             return
 
         currentNode = self.root
-        while currentNode != None:
+        while currentNode is not None:
             if value < currentNode.value:
-                if currentNode.left == None:
+                if currentNode.left is None:
                     currentNode.left = newNode
                     return
                 currentNode = currentNode.left
             else:
-                if currentNode.right == None:
+                if currentNode.right is None:
                     currentNode.right = newNode
                     return
-                currentNode = currentNode.right 
+                currentNode = currentNode.right
 
     def lookup(self, value):
-        if self.root == None:
+        if self.root is None:
             print('Tree contains no element so "{value}" not in tree'.format(value=value))
             return
 
         currentNode = self.root
-        while currentNode != None:
+        while currentNode is not None:
             if currentNode.value == value:
-                print('Found {value}'.format(value = value))
+                print('Found {value}'.format(value=value))
                 return
             elif value < currentNode.value:
-                    currentNode = currentNode.left
+                currentNode = currentNode.left
             else:
                 currentNode = currentNode.right
-        print('{value} not in the Tree'.format(value = value))
+        print('{value} not in the Tree'.format(value=value))
 
     def remove(self, value):
-        if self.root == None:
+        if self.root is None:
             print('Tree contains no element do "{value}" cannot be removed from the tree'.format(value=value))
-            return 
-        
-        #if value is in root node
+            return
+
+            # if value is in root node
         if self.root.value == value:
-            if self.root.left == None and self.root.right == None:
+            if self.root.left is None and self.root.right is None:
                 self.root = None
-            elif self.root.left != None and self.root.right == None:
+            elif self.root.left is not None and self.root.right is None:
                 self.root = self.root.left
-            elif self.root.left == None and self.root.right != None:
+            elif self.root.left is None and self.root.right is not None:
                 self.root = self.root.right
-            elif self.root.left != None and self.root.right != None:
+            elif self.root.left is not None and self.root.right is not None:
                 successorParent = self.root
                 successor = successorParent.right
 
-                while successor.left != None:
+                while successor.left is not None:
                     successorParent = successor
                     successor = successor.left
 
                 self.root.value = successor.value
 
-                if successor.right != None:
+                if successor.right is not None:
                     if successorParent.value > successor.value:
                         successorParent.left = successor.right
                     elif successorParent.value < successor.value:
@@ -77,68 +78,68 @@ class BinarySearchTree:
                         successorParent.left = None
                     else:
                         successorParent.right = None
-            
-            return 
 
-        
-        # Lookup for node to be removed if node is part o f rest of Tree
+            return
+
+            # Lookup for node to be removed if node is part o f rest of Tree
         currentNode = self.root
         parentNode = None
 
-        while currentNode != None:
+        while currentNode is not None:
             if currentNode.value == value:
-                break 
-            elif value < currentNode.value :
+                break
+            elif value < currentNode.value:
                 parentNode = currentNode
                 currentNode = currentNode.left
             else:
                 parentNode = currentNode
                 currentNode = currentNode.right
-        
-        if currentNode == None:
+
+        if currentNode is None:
             print('Node not in the tree')
             return
-        
-        #Case 1: removeNode is a Leaf node
-        if currentNode.left == None and currentNode.right == None:
+
+        # Case 1: removeNode is a Leaf node
+        if currentNode.left is None and currentNode.right is None:
             if value == parentNode.left.value:
                 parentNode.left = None
             else:
                 parentNode.right = None
             return
 
-        #Case 2: removeNode has only one child
+        # Case 2: removeNode has only one child
 
-        #Case 2a: removeNode has only a left Child:
-        if currentNode.left != None and currentNode.right == None:
+        # Case 2a: removeNode has only a left Child:
+        if currentNode.left is not None and currentNode.right is None:
             if value == parentNode.left.value:
                 parentNode.left = currentNode.left
             else:
                 parentNode.right = currentNode.left
             return
 
-        #Case 2b: removeNode has only a right Child:
-        if currentNode.left == None and currentNode.right != None:
+        # Case 2b: removeNode has only a right Child:
+        if currentNode.left is None and currentNode.right is not None:
             if value == parentNode.left.value:
                 parentNode.left = currentNode.right
             else:
                 parentNode.right = currentNode.right
-            return 
+            return
 
-        #Case 3: removeNode has left and right children:
-        #We could solve by replacing removeNode with largest in left sub-tree or smallest in right sub-tree. 
+            # Case 3: removeNode has left and right children:
+        # We could solve by replacing removeNode with largest in left sub-tree or smallest in right sub-tree.
 
-        #To replace with smallest in right sub tree, get next node. Check if nextNode.left == None. if not traverse through left node until None and then replace.
+        # To replace with smallest in right sub tree, get next node. Check if nextNode.left == None. if not traverse
+        # through left node until None and then replace.
         successorParent = currentNode
         successor = successorParent.right
 
-        while successor.left != None:
+        while successor.left is not None:
             successorParent = successor
             successor = successor.left
 
         currentNode.value = successor.value
 
-        if successor.right != None:
+        if successor.right is not None:
             if successorParent.value > successor.value:
                 successorParent.left = successor.right
             elif successorParent.value < successor.value:
@@ -149,7 +150,6 @@ class BinarySearchTree:
             else:
                 successorParent.right = None
 
-        
     def breadthFirstSearch(self):
         currentNode = self.root
         treeElements = []
@@ -158,13 +158,13 @@ class BinarySearchTree:
         while len(queue) > 0:
             currentNode = queue.pop(0)
             treeElements.append(currentNode.value)
-            
-            if currentNode.left != None:
+
+            if currentNode.left is not None:
                 queue.append(currentNode.left)
-            
-            if currentNode.right!= None:
+
+            if currentNode.right is not None:
                 queue.append(currentNode.right)
-        
+
         print(treeElements)
 
     def depthFirstSearchPreOrder(self):
@@ -172,9 +172,9 @@ class BinarySearchTree:
         treeElements = []
         stack = []
 
-        if currentNode == None:
+        if currentNode is None:
             print(stack)
-            return  
+            return
 
         stack.append(currentNode)
 
@@ -182,10 +182,10 @@ class BinarySearchTree:
             currentNode = stack.pop()
             treeElements.append(currentNode.value)
 
-            if currentNode.right != None:
+            if currentNode.right is not None:
                 stack.append(currentNode.right)
-            
-            if currentNode.left != None:
+
+            if currentNode.left is not None:
                 stack.append(currentNode.left)
 
         print(treeElements)
@@ -195,35 +195,35 @@ class BinarySearchTree:
         treeElements = []
         stack = []
 
-        if currentNode == None:
+        if currentNode is None:
             print(stack)
-            return  
-        
+            return
+
         stack.append(currentNode)
 
         while len(stack) > 0:
             currentNode = stack.pop()
-            treeElements.insert(0,currentNode.value)
+            treeElements.insert(0, currentNode.value)
 
-            if currentNode.left != None:
-                stack.append(currentNode.left) 
+            if currentNode.left is not None:
+                stack.append(currentNode.left)
 
-            if currentNode.right != None:
+            if currentNode.right is not None:
                 stack.append(currentNode.right)
 
         print(treeElements)
 
     def depthFirstSearchInOrder(self):
-        currentNode = self.root   
+        currentNode = self.root
         treeElements = []
         stack = []
 
-        if currentNode == None:
+        if currentNode is None:
             print(stack)
-            return 
-        
+            return
+
         while True:
-            if currentNode != None:
+            if currentNode is not None:
                 stack.append(currentNode)
                 currentNode = currentNode.left
             else:
@@ -231,21 +231,21 @@ class BinarySearchTree:
                     break
                 currentNode = stack.pop()
                 treeElements.append(currentNode.value)
-                currentNode = currentNode.right 
-        
+                currentNode = currentNode.right
+
         print(treeElements)
 
     def recursiveBreadthFirstSearch(self, queue, treeElements):
-        if len(queue) == 0: 
+        if len(queue) == 0:
             return treeElements
 
         currentNode = queue.pop(0)
         treeElements.append(currentNode.value)
 
-        if currentNode.left != None:
+        if currentNode.left is not None:
             queue.append(currentNode.left)
 
-        if currentNode.right != None:
+        if currentNode.right is not None:
             queue.append(currentNode.right)
 
         return self.recursiveBreadthFirstSearch(queue, treeElements)
@@ -256,10 +256,10 @@ class BinarySearchTree:
     def traversePreOrder(self, currentNode, treeElements):
         treeElements.append(currentNode.value)
 
-        if currentNode.left != None:
+        if currentNode.left is not None:
             self.traversePreOrder(currentNode.left, treeElements)
 
-        if currentNode.right != None:
+        if currentNode.right is not None:
             self.traversePreOrder(currentNode.right, treeElements)
 
         return treeElements
@@ -268,10 +268,10 @@ class BinarySearchTree:
         return self.traversePostOrder(self.root, [])
 
     def traversePostOrder(self, currentNode, treeElements):
-        if currentNode.left != None:
+        if currentNode.left is not None:
             self.traversePostOrder(currentNode.left, treeElements)
 
-        if currentNode.right != None:
+        if currentNode.right is not None:
             self.traversePostOrder(currentNode.right, treeElements)
 
         treeElements.append(currentNode.value)
@@ -281,24 +281,19 @@ class BinarySearchTree:
         return self.traverseInOrder(self.root, [])
 
     def traverseInOrder(self, currentNode, treeElements):
-        if currentNode.left != None:
+        if currentNode.left is not None:
             self.traverseInOrder(currentNode.left, treeElements)
 
         treeElements.append(currentNode.value)
 
-        if currentNode.right != None:
+        if currentNode.right is not None:
             self.traverseInOrder(currentNode.right, treeElements)
 
-        
         return treeElements
-        
-        
-
-
 
 
 driver = BinarySearchTree()
-driver.lookup(100) 
+driver.lookup(100)
 driver.insert(9)
 driver.insert(4)
 driver.insert(1)
