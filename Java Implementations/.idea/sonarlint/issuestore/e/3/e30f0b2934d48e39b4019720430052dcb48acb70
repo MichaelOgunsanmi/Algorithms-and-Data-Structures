@@ -1,15 +1,4 @@
 
-nsquid:CommentedOutCodeLineA"<This block of commented-out lines of code should be removed.(İ‹ÒÉùÿÿÿÿ8üÓöºä-
-gsquid:CommentedOutCodeLine	"<This block of commented-out lines of code should be removed.(„È­Œÿÿÿÿÿ
-bsquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(µ„Áª
-gsquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(¤óÃßşÿÿÿÿ
-Xsquid:UselessImportCheck"/Remove this unused import 'java.sql.SQLOutput'.(ê¤òÃùÿÿÿÿ
-wsquid:S00120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ËÊ­üıÿÿÿÿ
-[
-squid:S106>"9Replace this use of System.out or System.err by a logger.(û£üùÿÿÿÿ8«êêºä-
-nsquid:CommentedOutCodeLine3"<This block of commented-out lines of code should be removed.(×½ƒÇøÿÿÿÿ8î˜¸¸ä-
-bsquid:CommentedOutCodeLine&"<This block of commented-out lines of code should be removed.(¶ö²
-gsquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(÷¿ŸÁıÿÿÿÿ
-gsquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(ˆøÓııÿÿÿÿ
-nsquid:CommentedOutCodeLine8"<This block of commented-out lines of code should be removed.(õ£İËşÿÿÿÿ8ğ“Ú¹ä-
-asquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(¿šêI
+{	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ËÊ­üıÿÿÿÿ8§ìò¾/
+Q
+java:S1128"/Remove this unused import 'java.sql.SQLOutput'.(ê¤òÃùÿÿÿÿ8§ìò¾/

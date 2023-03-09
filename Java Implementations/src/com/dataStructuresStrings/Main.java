@@ -39,7 +39,8 @@ public class Main {
 //        System.out.println (areAnagrams2 ); // true;
 
         //isPalindrome;
-        Boolean isPalindrome = StringUtils.isPalindrome ( "Madam" );
-        System.out.println (isPalindrome ); // false because of case sensitivity;
+//        Boolean isPalindrome = StringUtils.isPalindrome ( "Madam" );
+//        System.out.println (isPalindrome ); // false because of case sensitivity;
+        System.out.println ("HELLO AGAIN! cool");
     }
 }

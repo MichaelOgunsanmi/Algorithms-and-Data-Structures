@@ -5,6 +5,20 @@
     "version": "0.2.0",
     "configurations": [
         {
+            "type": "java",
+            "name": "Launch Main",
+            "request": "launch",
+            "mainClass": "com.dataStructuresTrees.Main",
+            "projectName": "Algorithms-and-Data-Structures_17c47485"
+        },
+        {
+            "type": "java",
+            "name": "Launch Main",
+            "request": "launch",
+            "mainClass": "com.dataStructuresSearching.Main",
+            "projectName": "Algorithms-and-Data-Structures_17c47485"
+        },
+        {
             "name": "Python: Current File",
             "type": "python",
             "request": "launch",

@@ -1,5 +1,8 @@
 
-qsquid:S00120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(¦Úä
-Bsquid:S1659"Declare "j" on a separate line.(¼…´Ÿúÿÿÿÿ8Áû°Ñä-
-wsquid:S3012"YUse "Arrays.copyOf", "Arrays.asList", "Collections.addAll" or "System.arraycopy" instead.(ÑÔÛÀ8úž¦Ñä-
-Bsquid:S1659"Declare "k" on a separate line.(¼…´Ÿúÿÿÿÿ8Áû°Ñä-
+u	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(¦Úä8‚ÎÐØž/
+v
+java:S3012"YUse "Arrays.copyOf", "Arrays.asList", "Collections.addAll" or "System.arraycopy" instead.(ÑÔÛÀ8‚ÎÐØž/
+A
+java:S1659"Declare "j" on a separate line.(¼…´Ÿúÿÿÿÿ8‚ÎÐØž/
+A
+java:S1659"Declare "k" on a separate line.(¼…´Ÿúÿÿÿÿ8‚ÎÐØž/

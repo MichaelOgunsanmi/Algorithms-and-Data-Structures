@@ -53,11 +53,11 @@ public class Main {
 
 
 //        AVL Trees;
-        AVLTree avlTree = new AVLTree ();
-//        avlTree.insert ( 4 );
-        avlTree.insert ( 8 );
-        avlTree.insert ( 10 );
-        avlTree.insert ( 9 );
+//         AVLTree avlTree = new AVLTree ();
+// //        avlTree.insert ( 4 );
+//         avlTree.insert ( 8 );
+//         avlTree.insert ( 10 );
+//         avlTree.insert ( 9 );
         System.out.println ( "done" );
 
     }

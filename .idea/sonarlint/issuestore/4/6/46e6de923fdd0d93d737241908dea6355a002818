@@ -1,5 +1,0 @@
-
-lpython:S100"PRename method "printList" to match the regular expression ^[a-z_][a-z0-9_]{2,}$.(€ý°Ýÿÿÿÿÿ
-;python:S125#"Remove this commented out code.(ªƒ©ˆþÿÿÿÿ
-jpython:S100"NRename method "isEmpty" to match the regular expression ^[a-z_][a-z0-9_]{2,}$.(ÇŽõ¹ùÿÿÿÿ
-1python:S1700"Rename field "stack"(‰þ„‹üÿÿÿÿ

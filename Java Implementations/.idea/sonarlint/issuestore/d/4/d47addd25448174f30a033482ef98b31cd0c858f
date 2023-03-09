@@ -1,0 +1,18 @@
+
+Œ
+java:S1319Ğ"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(İŠ²şÿÿÿÿ
+Œ
+java:S1319ã"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(µØ°Šıÿÿÿÿ
+‡
+java:S1319Ä"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(ÔÊ€“
+J
+java:S3740K"/Provide the parametrized type for this generic.(ÄœÇİûÿÿÿÿ
+J
+java:S3740\"/Provide the parametrized type for this generic.(‰ŠÓ­üÿÿÿÿ
+E
+java:S3740m"/Provide the parametrized type for this generic.(â±ãÕ
+^
+java:S2184ê"BCast one of the operands of this addition operation to a "double".(²Á×şÿÿÿÿ
+o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(º²Ÿ³
+q
+java:S1201¨"UEither override Object.equals(Object), or rename the method to prevent any confusion.(å½Ù×úÿÿÿÿ

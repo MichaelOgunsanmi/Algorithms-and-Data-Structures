@@ -131,7 +131,7 @@ class BinarySearchTree:
         # To replace with smallest in right sub tree, get next node. Check if nextNode.left == None. if not traverse
         # through left node until None and then replace.
         successorParent = currentNode
-        successor = successorParent.right
+        successor = successorParent.right 
 
         while successor.left is not None:
             successorParent = successor
@@ -312,3 +312,7 @@ driver.depthFirstSearchInOrder()
 print('Depth First Search Recursive InOrder', driver.recursiveDepthFirstSearchInOrder())
 driver.depthFirstSearchPostOrder()
 print('Depth First Search Recursive PostOrder', driver.recursiveDepthFirstSearchPostOrder())
+
+
+
+
